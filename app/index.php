@@ -1,0 +1,13 @@
+ <!DOCTYPE html>
+<html>
+
+<body>
+
+<form action="foo.php" style="text-align:center;" method="post">
+    <p>Free pop <input type="text" id="fpop" name="fpop" value="1">
+    <input type="submit" name="submit" value="CALCULATE" />
+</form>
+
+</body>
+
+</html> 
