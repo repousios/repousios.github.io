@@ -6,7 +6,7 @@ $poptroop = 0;
 $transtpop = 0;
 $transports = 0;
 $troopcapacity = 0;
-$fpop = $_GET['fpop'];
+$fpop = $_POST['fpop'];
 //$fpop = 2030;
 
 function calculate($fpop,$transpop,$transcap,$transtpop,$transports,$troopcapacity) {
