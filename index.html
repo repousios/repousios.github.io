@@ -1,13 +1,125 @@
  <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mushroom Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
 
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .mushroom-icon {
+            font-size: 5em;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .game-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .game-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .features li {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        .old-tools {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+
+        .old-tools a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .old-tools a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
+    <div class="container">
+        <h1>🍄 Mushroom Farm 🍄</h1>
+        <div class="mushroom-icon">🍄🦪🟡</div>
 
-<form action="foo.php" style="text-align:center;" method="post">
-    <p>Free pop <input type="text" id="fpop" name="fpop" value="1">
-    <input type="submit" name="submit" value="CALCULATE" />
-</form>
+        <p>Welcome to the ultimate mushroom growing simulation! Build your mushroom empire from the ground up.</p>
 
+        <a href="mushroom-game.html" class="game-link">🎮 Play Now!</a>
+
+        <div class="features">
+            <h3>Game Features:</h3>
+            <ul>
+                <li>🍄 12+ Unique mushroom species to grow</li>
+                <li>⏱️ Real-time growth simulation</li>
+                <li>📦 Inventory & quality management</li>
+                <li>🏪 Dynamic market system</li>
+                <li>📋 Missions & achievements</li>
+                <li>🔬 Research tree & upgrades</li>
+                <li>💾 Auto-save & offline progress</li>
+                <li>🎯 Level up & unlock new content</li>
+            </ul>
+        </div>
+
+        <div class="old-tools">
+            <p style="font-size: 0.9em; color: #999;">
+                Looking for the old calculator? <a href="old-index.html">Click here</a>
+            </p>
+        </div>
+    </div>
 </body>
-
 </html> 

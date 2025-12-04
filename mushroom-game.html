@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍄 Mushroom Growing Simulation</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Top Bar -->
+        <div id="top-bar">
+            <div class="player-info">
+                <span class="player-level">Level: <span id="player-level">1</span></span>
+                <div class="xp-bar">
+                    <div id="xp-fill" class="xp-fill"></div>
+                    <span id="xp-text" class="xp-text">0 / 100</span>
+                </div>
+            </div>
+            <div class="currency-display">
+                <span class="gold">💰 <span id="gold">100</span></span>
+                <span class="research">🔬 <span id="research-points">0</span></span>
+                <span class="premium">💎 <span id="premium-tokens">0</span></span>
+            </div>
+            <div class="quick-actions">
+                <button id="save-btn" class="icon-btn" title="Save Game">💾</button>
+                <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav id="main-nav">
+            <button class="nav-btn active" data-view="farm">🍄 Farm</button>
+            <button class="nav-btn" data-view="inventory">📦 Inventory</button>
+            <button class="nav-btn" data-view="market">🏪 Market</button>
+            <button class="nav-btn" data-view="missions">📋 Missions</button>
+            <button class="nav-btn" data-view="research">🔬 Research</button>
+            <button class="nav-btn" data-view="stats">📊 Stats</button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div id="main-content">
+            <!-- Farm View -->
+            <div id="farm-view" class="view active">
+                <div class="farm-header">
+                    <h2>🍄 My Mushroom Farm</h2>
+                    <div class="environment-controls">
+                        <span>🌡️ Temp: <span id="global-temp">20</span>°C</span>
+                        <span>💧 Humidity: <span id="global-humidity">70</span>%</span>
+                    </div>
+                </div>
+                <div id="growing-beds-container" class="growing-beds-grid">
+                    <!-- Growing beds will be generated here -->
+                </div>
+                <div class="bed-details-panel" id="bed-details-panel">
+                    <h3>Growing Bed Details</h3>
+                    <div id="bed-details-content">
+                        <p>Select a growing bed to view details</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory View -->
+            <div id="inventory-view" class="view">
+                <h2>📦 Inventory</h2>
+                <div class="inventory-tabs">
+                    <button class="tab-btn active" data-tab="mushrooms">Mushrooms</button>
+                    <button class="tab-btn" data-tab="resources">Resources</button>
+                    <button class="tab-btn" data-tab="equipment">Equipment</button>
+                    <button class="tab-btn" data-tab="spores">Spores</button>
+                </div>
+                <div class="inventory-content">
+                    <div id="inventory-mushrooms" class="inventory-tab-content active"></div>
+                    <div id="inventory-resources" class="inventory-tab-content"></div>
+                    <div id="inventory-equipment" class="inventory-tab-content"></div>
+                    <div id="inventory-spores" class="inventory-tab-content"></div>
+                </div>
+            </div>
+
+            <!-- Market View -->
+            <div id="market-view" class="view">
+                <h2>🏪 Market</h2>
+                <div class="market-tabs">
+                    <button class="tab-btn active" data-tab="buy">Buy</button>
+                    <button class="tab-btn" data-tab="sell">Sell</button>
+                </div>
+                <div class="market-content">
+                    <div id="market-buy" class="market-tab-content active"></div>
+                    <div id="market-sell" class="market-tab-content"></div>
+                </div>
+            </div>
+
+            <!-- Missions View -->
+            <div id="missions-view" class="view">
+                <h2>📋 Missions</h2>
+                <div class="missions-tabs">
+                    <button class="tab-btn active" data-tab="active">Active</button>
+                    <button class="tab-btn" data-tab="completed">Completed</button>
+                </div>
+                <div id="missions-content"></div>
+            </div>
+
+            <!-- Research View -->
+            <div id="research-view" class="view">
+                <h2>🔬 Research Laboratory</h2>
+                <div class="research-branches">
+                    <div class="branch biology">
+                        <h3>🧬 Biology</h3>
+                        <div id="biology-research" class="research-items"></div>
+                    </div>
+                    <div class="branch engineering">
+                        <h3>⚙️ Engineering</h3>
+                        <div id="engineering-research" class="research-items"></div>
+                    </div>
+                    <div class="branch business">
+                        <h3>💼 Business</h3>
+                        <div id="business-research" class="research-items"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats View -->
+            <div id="stats-view" class="view">
+                <h2>📊 Statistics & Achievements</h2>
+                <div id="stats-content"></div>
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div id="notifications-container"></div>
+
+        <!-- Modal -->
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <button class="modal-close">&times;</button>
+                <div id="modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
