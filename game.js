@@ -544,10 +544,10 @@ class MushroomGame {
 
         // Calculate yield
         const baseYield = 1;
-        const yield = Math.floor(baseYield * (1 + gameState.research.bonuses.yieldBonus));
+        const harvestYield = Math.floor(baseYield * (1 + gameState.research.bonuses.yieldBonus));
 
         // Add to inventory
-        for (let i = 0; i < yield; i++) {
+        for (let i = 0; i < harvestYield; i++) {
             gameState.inventory.mushrooms.push({
                 species: bed.species,
                 quality: quality,
@@ -560,15 +560,15 @@ class MushroomGame {
         if (!gameState.player.statistics.mushroomsGrownBySpecies[bed.species]) {
             gameState.player.statistics.mushroomsGrownBySpecies[bed.species] = 0;
         }
-        gameState.player.statistics.mushroomsGrownBySpecies[bed.species] += yield;
+        gameState.player.statistics.mushroomsGrownBySpecies[bed.species] += harvestYield;
 
         // Add XP
         this.addXP(species.tier * 10);
 
         // Update mission progress
-        this.updateMissionProgress('harvest', yield);
+        this.updateMissionProgress('harvest', harvestYield);
         if (quality >= 3) {
-            this.updateMissionProgress('harvest_quality', yield);
+            this.updateMissionProgress('harvest_quality', harvestYield);
         }
 
         // Clear bed
@@ -579,7 +579,7 @@ class MushroomGame {
 
         this.showNotification(
             'Harvested!',
-            `Collected ${yield}x ${species.name} (${this.getQualityStars(quality)})!`,
+            `Collected ${harvestYield}x ${species.name} (${this.getQualityStars(quality)})!`,
             'success'
         );
 
